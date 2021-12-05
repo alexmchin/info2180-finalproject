@@ -5,13 +5,14 @@ window.onload = function () {
 	var progress_Button = document.getElementById("inprogress");
 	close_Button.addEventListener("click", function (e) {
 		var http_Request = new XMLHttpRequest();
-		var issues_UpdateURL = "issues_Update.php?id=" + id_Issue + "&update=Closed";
-		/*console.log(issues_UpdateURL);*/
+		var issues_UpdateURL = "issues_Update.php?id=" + id_Issue + "&update_Status=Closed";
+		console.log("Here");
 		http_Request.onreadystatechange = function () {
 			if (http_Request.readyState == XMLHttpRequest.DONE) {
 				if (http_Request.status == 200) {
 					if (http_Request.responseText == "Updated") {
 						location.reload();
+						
 					}
 				} else {
 					alert(error_Msg);
@@ -24,7 +25,7 @@ window.onload = function () {
 
 	progress_Button.addEventListener("click", function (e) {
 		var http_Request = new XMLHttpRequest();
-		var issues_UpdateURL = "issues_Update.php?id=" + id_Issue + "&update=In-Progress";
+		var issues_UpdateURL = "issues_Update.php?id=" + id_Issue + "&update_Status=In-Progress";
 		http_Request.onreadystatechange = function () {
 			if (http_Request.readyState == XMLHttpRequest.DONE) {
 				if (http_Request.status == 200) {

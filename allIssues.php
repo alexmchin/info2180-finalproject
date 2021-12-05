@@ -21,7 +21,7 @@
         $retrievedname = $retrievename->fetch(PDO::FETCH_ASSOC);
             ?>
             <tr>
-                <td class='poundSign'><?php echo "#".$issue['id']; ?><a class="issue_Link" href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>"><?php echo " ".$issue['title']; ?></a></td>
+                <td class='poundSign'><?php echo "#".$issue['id']; ?><a class="issue_Link" href="job_Details.php?issueid=<?php echo $issue['id'];?>"><?php echo " ".$issue['title']; ?></a></td>
                 <td><?php echo $issue['type']; ?></td>
                 <?php if($issue['status']=='OPEN'){ ?>
                     <div class = "statuscontainer">

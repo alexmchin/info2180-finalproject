@@ -1,14 +1,14 @@
 var error_Msg = "There was an issue retrieving the requested infomation."
 window.onload = function () {
-	const issueButton = document.getElementById("myTicketsBtn");
+	var issueButton = document.getElementById("myTicketsBtn");
 	issueButton.addEventListener("click", function (e) {
-		const myTicketsUrl = "my_Tickets.php";
-        const dashBoard_LinkRequest = new XMLHttpRequest();
+		var myTicketsUrl = "my_Tickets.php";
+        var dashBoard_LinkRequest = new XMLHttpRequest();
 		dashBoard_LinkRequest.onreadystatechange = function () {
 			if (dashBoard_LinkRequest.readyState == XMLHttpRequest.DONE) {
 				if (dashBoard_LinkRequest.status == 200) {
-					const ticketIssue = dashBoard_LinkRequest.responseText;
-					const result = document.getElementById("result");
+					var ticketIssue = dashBoard_LinkRequest.responseText;
+					var result = document.getElementById("result");
 					result.innerHTML = ticketIssue;
 				} else {
 					alert(error_Msg);
@@ -19,15 +19,15 @@ window.onload = function () {
 		dashBoard_LinkRequest.send();
 	});
 
-	const openIssueBtn = document.getElementById("openIssuesBtn");
+	var openIssueBtn = document.getElementById("openIssuesBtn");
 	openIssueBtn.addEventListener("click", function (e) {
-		const openIssuesUrl = "open_Issues.php";
-        const openIssuesRequest = new XMLHttpRequest();
+		var openIssuesUrl = "open_Issues.php";
+        var openIssuesRequest = new XMLHttpRequest();
 		openIssuesRequest.onreadystatechange = function () {
 			if (openIssuesRequest.readyState == XMLHttpRequest.DONE) {
 				if (openIssuesRequest.status == 200) {
-					const issue = openIssuesRequest.responseText;
-					const result = document.getElementById("result");
+					var issue = openIssuesRequest.responseText;
+					var result = document.getElementById("result");
 					result.innerHTML = issue;
 				} else {
 					alert(error_Msg);
@@ -38,15 +38,15 @@ window.onload = function () {
 		openIssuesRequest.send();
 	});
 
-	const allIssuesBtn = document.getElementById("allIssuesBtn");
+	var allIssuesBtn = document.getElementById("allIssuesBtn");
 	allIssuesBtn.addEventListener("click", function (e) {
-		const allIssuesUrl = "allIssues.php";
-        const allIssuesRequest = new XMLHttpRequest();
+		var allIssuesUrl = "allIssues.php";
+        var allIssuesRequest = new XMLHttpRequest();
 		allIssuesRequest.onreadystatechange = function () {
 			if (allIssuesRequest.readyState == XMLHttpRequest.DONE) {
 				if (allIssuesRequest.status == 200) {
-					const issue = allIssuesRequest.responseText;
-					const result = document.getElementById("result");
+					var issue = allIssuesRequest.responseText;
+					var result = document.getElementById("result");
 					result.innerHTML = issue;
 				} else {
 					alert(error_Msg);
@@ -57,13 +57,13 @@ window.onload = function () {
 		allIssuesRequest.send();
 	});
 
-    const pageIssuesUrl = "allIssues.php";
-	const pageIssuesRequest = new XMLHttpRequest();
+    var pageIssuesUrl = "allIssues.php";
+	var pageIssuesRequest = new XMLHttpRequest();
 	pageIssuesRequest.onreadystatechange = function () {
 		if (pageIssuesRequest.readyState == XMLHttpRequest.DONE) {
 			if (pageIssuesRequest.status == 200) {
-				const issue = pageIssuesRequest.responseText;
-				const result = document.getElementById("result");
+				var issue = pageIssuesRequest.responseText;
+				var result = document.getElementById("result");
 				result.innerHTML = issue;
 			} else {
 				alert(error_Msg);
@@ -74,13 +74,13 @@ window.onload = function () {
 	pageIssuesRequest.send();
 
 
-    /*const dashBoard_Link = document.getElementById("load_Dashboard");
+    /*var dashBoard_Link = document.getElementById("load_Dashboard");
 	dashBoard_Link.addEventListener("click", function (e) {
-        const dashBoard_LinkRequest = new XMLHttpRequest();
+        var dashBoard_LinkRequest = new XMLHttpRequest();
 		dashBoard_LinkRequest.onreadystatechange = function () {
 			if (dashBoard_LinkRequest.readyState == XMLHttpRequest.DONE) {
 				if (dashBoard_LinkRequest.status == 200) {
-                    const dashBoard_Link = "dash_Board.php";
+                    var dashBoard_Link = "dash_Board.php";
                     dashBoard_LinkRequest.open("GET", dashBoard_Link, true);
 		            dashBoard_LinkRequest.send();
                     alert("Good");
@@ -88,8 +88,8 @@ window.onload = function () {
             }
         }
 
-					/*const dash_Request = dashBoard_LinkRequest.responseText;
-					/*const result = document.getElementById("result");*/
+					/*var dash_Request = dashBoard_LinkRequest.responseText;
+					/*var result = document.getElementById("result");*/
 					/*result.innerHTML = ticketIssue;
 				} else {
 					alert(error_Msg);

@@ -3,13 +3,13 @@
 
     $first_name = filter_input(INPUT_GET,"firstname",FILTER_SANITIZE_STRING); 
     $last_name = filter_input(INPUT_GET,"lastname",FILTER_SANITIZE_STRING); 
-    $passwd = filter_input(INPUT_GET,"passwd",FILTER_SANITIZE_STRING);
+    $passwd = filter_input(INPUT_GET,"password",FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_GET,"email",FILTER_SANITIZE_EMAIL); 
     $email = filter_var($email,FILTER_VALIDATE_EMAIL);
     $insert = true;
     $data = array($first_name,$last_name,$passwd,$email);
     foreach ($data as $element):
-        if(!preg_match("^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$", $element) && ($element==$passwd)){
+        if(!preg_match("/^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/",$element) & $element==$passwd){
             echo "<br>not match";
             $insert=false;
         }

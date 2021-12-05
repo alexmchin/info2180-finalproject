@@ -6,6 +6,7 @@
 
     $dsn = "mysql:host=$host;dbname=$db_name;";
     $connection = new PDO($dsn, $user_name, $pass_word);
+    /*echo "Connected to DB";
     /*try{
         $connection = new PDO($dsn, $user_name, $pass_word);
         if ($connection){

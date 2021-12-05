@@ -9,7 +9,7 @@ window.onload = function () {
 		e.preventDefault();
 		if (validate_Fields() == true) {
 			var http_Request = new XMLHttpRequest();
-			var urlcode = "insertuser.php?firstname=" + firstname.value + "&lastname=" + lastname.value + "&password=" + password.value + "&email=" + email.value;
+			var urlcode = "submit_User.php?firstname=" + firstname.value + "&lastname=" + lastname.value + "&password=" + password.value + "&email=" + email.value;
 			http_Request.onreadystatechange = function () {
 				if (http_Request.readyState == XMLHttpRequest.DONE) {
 					if (http_Request.status == 200) {
@@ -23,6 +23,7 @@ window.onload = function () {
 
 			http_Request.open("GET", urlcode, true);
 			http_Request.send();
+			console.log("Here");
 			firstname.value = "";
 			lastname.value = "";
 			password.value = "";
@@ -33,7 +34,7 @@ window.onload = function () {
 function validate_Fields() {
 	var firstname = document.getElementById("firstname");
 	var lastname = document.getElementById("lastname");
-	var password = document.getElementById("password");
+	var password = document.getElementById("passwd");
 	var email = document.getElementById("email");
 	var result = document.getElementById("result");
 	var check = true;
